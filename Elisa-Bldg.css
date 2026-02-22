@@ -206,7 +206,7 @@ nav.navigation {
     justify-content: center;
     position: relative;
     margin-bottom: 50px;
-    margin-right: 60%;
+    margin-right: 80%;
     animation: fadeInUp 1.5s ease-out;
 }
 
@@ -347,4 +347,5 @@ nav.navigation {
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
+
 }
