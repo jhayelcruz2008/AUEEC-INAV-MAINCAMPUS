@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Loading Screen */
+
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #007BFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 1s ease forwards;
+  animation-delay: 3s;
+  z-index: 9999;
+}
+
+.spinning {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #555;
+  border-top: 5px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Navigation Bar */
+
+nav.navigation {
+    width: 100%;
+    height: 85px;
+    background-color: rgb(15, 15, 205);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.image-logo {
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
+}
+
+.campus h5 {
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    animation: fadeInDown 2s ease-out;
+}
+
+.logo-link {
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: auto;
+    font-family: serif;
+    animation: fadeInUp 2s ease-out;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo-link:hover {
+    color: #99cbee;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+    position: absolute;
+    right: 135px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000000;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 20px 0;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+.mobile-menu a:hover {
+    color: #99cbee;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-btn:hover {
+    color: #99cbee;
+}
+
+/* Hamburger Animation */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Main Layout */
+.main-content {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #99cbee, #59b4ff);
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Show Buildings Toggle Button */
+.show-buildings-btn {
+    background-color: rgb(15, 15, 205);
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    border-radius: 8px;
+    margin-right: 80%;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-family: inherit;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.show-buildings-btn:hover {
+    background-color: rgb(10, 10, 150);
+    transform: scale(1.05);
+}
+
+.show-buildings-btn .arrow {
+    margin-right: 8px;
+}
+
+/* Room Choices - Hidden by default */
+.room-choices {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 50px;
+    margin-right: 80%;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Building Buttons */
+.room-btn {
+    background-color: rgb(15, 15, 205);
+    color: white;
+    padding: 12px 24px;
+    font-size: 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline;
+}
+
+.room-btn:hover {
+    background-color: rgb(10, 10, 150);
+    transform: scale(1.1);
+    box-shadow: 0 7px black;
+}
+
+.floor-details {
+    display: none; 
+    position: absolute; 
+    top: 0; 
+    left: 100%; 
+    margin-left: 25px;
+    background-color: #3ef2ff;
+    border: 3px solid #cccccc;
+    padding: 20px;
+    width: 280px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 10;
+    font-size: 16px; 
+    border-radius: 4px; 
+    color: #333; 
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.room-btn:hover .floor-details {
+    display: block;
+    opacity: 1; 
+}
+/* Video Container */
+.video-container {
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Mobile Responsive for Videos */
+@media (max-width: 768px) {
+    .video-container iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+}
+
+/* MOBILE RESPONSIVE FIXES */
+@media (max-width: 768px) {  
+    nav.navigation {
+        height: 70px;
+        padding: 0 20px;
+    }
+    
+    .image-logo {
+        height: 50px;
+        width: 50px;
+        margin-right: 15px;
+    }
+    
+    .campus h5 {
+        font-size: 18px;
+        margin-left: 5px;
+    }
+    
+    .logo-link {
+        font-size: 24px;
+    }
+    
+    .main-content {
+        padding-top: 100px;
+    }
+    
+    .room-choices {
+        flex-direction: column;
+        margin-right: 0; /* 0 para sa mobile - para mas makatulong sa screen */
+        gap: 15px;
+        margin-bottom: 40px;
+        align-items: center;
+    }
+
+    .room-btn {
+        font-size: 16px;
+        padding: 12px 18px;
+        width: 85%;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .floor-details {
+        position: static;
+        display: none;
+        width: 90%;
+        margin-top: 10px;
+        padding: 15px;
+        font-size: 14px;
+        opacity: 1;
+        left: auto;
+        top: auto;
+        margin-left: 0;
+    }
+
+    .room-btn:hover .floor-details {
+        display: block;
+    }
+}
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
