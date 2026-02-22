@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INAV CAMPUS</title>
+    <link rel="stylesheet" href="Gregorio-bldg.css">
+</head>
+<body> 
+
+    <!--Loading Screen-->
+    <div class="loading">
+        <div class="spinning"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navigation">
+        <div class="aulogo">
+            <img src="new-au-logo.png" class="image-logo" alt="Arellano Logo">
+        </div>
+        <div class="campus">
+            <h5>Arellano University Elisa Esguerra Campus</h5>
+        </div> 
+        <a href="INAV-CAMPUS.HTML" class="logo-link">INAV</a>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <nav class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul>
+            <li><a href="About.html">About</a></li>
+            <li><a href="https://www.facebook.com/ElisaEsguerraCampus">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT - ISA LANG DITO -->
+    <main class="main-content">
+
+        <!-- Show Buildings Toggle Button -->
+        <button class="show-buildings-btn" id="show-buildings">
+            <span class="arrow">&#9654;</span> Show Floors
+        </button>
+        
+        <!-- BUILDING BUTTONS - May id na to! -->
+        <div class="room-choices" id="room-choices">
+            
+            <!-- Building Location - Google Drive Link -->
+            <a href="https://drive.google.com/file/d/1rjtMqKbpxslHlSu2vGqQ_HVT4ViAo0i_/preview" 
+               class="room-btn" 
+               target="_self">
+               Gregorio Sancianco, Building Location
+                <div class="floor-details">
+                    Building of where it is located at.
+                </div>
+            </a>
+            
+            <!-- First Floor - Google Drive Link -->
+            <a href="https://drive.google.com/file/d/1pbMAS7DKmv1wDG0JYvxKCM_tW2Q67vka/preview" 
+               class="room-btn" 
+               target="_self">
+               Gregorio Sancianco, First Floor
+                <div class="floor-details">
+                    <h3><b>Floor 1, Rooms are consists of:</b></h3> <br> OSA, DSWD, Dom-Rac, Room 101, Room 102 And Library
+                </div>
+            </a>
+            
+            <!-- Fourth Floor - Google Drive Link -->
+            <a href="https://drive.google.com/file/d/1DebVFHy7RnymVtUalqZOKY-lq03ahvZB/preview" 
+               class="room-btn" 
+               target="_self">
+               Gregorio Sancianco Bldg, Fourth Floor
+                <div class="floor-details">
+                    <h3><b>Floor 4, Rooms are consists of:</b></h3> <br> Room 404 and Room 405.
+                </div>
+            </a>
+            
+        </div>
+    </main>
+    
+     <!-- JavaScript -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-btn');
+        const showBuildings = document.getElementById('show-buildings');
+        const roomChoices = document.getElementById('room-choices');
+        
+        // Hamburger menu toggle
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.style.display = 'none';
+        });
+        
+        // Show Buildings toggle
+        showBuildings.addEventListener('click', () => {
+            if (roomChoices.style.display === 'none' || roomChoices.style.display === '') {
+                roomChoices.style.display = 'flex';
+                showBuildings.innerHTML = '<span class="arrow">&#9660;</span> Hide Floors';
+            } else {
+                roomChoices.style.display = 'none';
+                showBuildings.innerHTML = '<span class="arrow">&#9654;</span> Show Floors';
+            }
+        });
+    </script>
+</body>
+</html>
