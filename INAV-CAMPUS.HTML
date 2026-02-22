@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INAV CAMPUS</title>
+    <link rel="stylesheet" href="INAV-CAMPUS.CSS">
+</head>
+<body> 
+
+    <!--Loading Screen-->
+    <div class="loading">
+        <div class="spinning"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navigation">
+        <div class="aulogo">
+            <img src="new-au-logo.png" class="image-logo" alt="Arellano Logo">
+        </div>
+        <div class="campus">
+            <h5>Arellano University Elisa Esguerra Campus</h5>
+        </div>
+        <a href="INAV-MainHome.html" class="logo-link">INAV</a>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <nav class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul>
+            <li><a href="About.html">About</a></li>
+            <li><a href="https://www.facebook.com/ElisaEsguerraCampus">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        
+        <!-- AU Info Section Container -->
+        <div class="au-container">
+            
+            <!-- Show Buildings Toggle (Sa taas, sa gilid) -->
+            <div class="show-buildings" id="show-buildings">
+                <span class="arrow">&#9654;</span>
+                <span class="show-text">Show Buildings</span>
+            </div>
+            
+            <!-- BUILDING BUTTONS (Hidden by default) -->
+            <div class="room-choices" id="room-choices">
+                <a href="Elisa-Bldg.html" class="room-btn">Elisa Esguerra Bldg<br>(Building A)</a>
+                <a href="Natividad-Bldg.html" class="room-btn">Natividad Faustino Bldg<br>(Building B)</a>
+                <a href="Gregorio-bldg.html" class="room-btn">Gregorio Sanciano Bldg<br>(Building C)</a>
+                <a href="Officed-Bldg.html" class="room-btn">Officed-Bldg</a>
+            </div>
+            
+            <!-- AU Info Sections -->
+            <div class="au-info">
+                <div class="AU-Hymn">
+                    <h1>AU HYMN</h1>
+                    <p> Arellano pamantasan namin <br>
+                        Mahal naming Alma Mater. <br>
+                        Alay sa iyo mga puso namin <br>
+                        Lagi ka naming pakamamahalin<br>
+                        Ikaw ang aming tanging bukal<br>
+                        Ng malayang karunungan<br>
+                        O pamantaranan naming mahal<br>
+                        Arellano University.<br>
+                        <br>
+                        Arellano aming pamantaranan<br>
+                        Lingkod na tapat ng bayan<br>
+                        Ang dunong na sa amin ay bigay<br>
+                        Sa buhay ay gagamiting tanglaw<br>
+                        Sa Diyos ang samo nami't hiling<br>
+                        Ngalan mo'y laging magniningning<br>
+                        O pamantaranan naming mahal<br>
+                        Arellano University.</p>
+                </div>
+                <div class="AU-Vision">
+                    <h1>AU VISION</h1>
+                    <p>To be a model institution of learning<br>
+                         where relevant knowledge is acquired and skills<br>
+                        are developed in response<br>
+                         to the needs of the global community.</p>
+                         <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h1>AU-Mission</h1>
+                    <p>To provide equitable access <Br>
+                         to learning through relevant, innovative, industry-sensitive<br> 
+                         and environment-conscious academic programs and services</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- JavaScript -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-btn');
+        const showBuildings = document.getElementById('show-buildings');
+        const roomChoices = document.getElementById('room-choices');
+        
+        // Hamburger menu toggle
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.style.display = 'none';
+        });
+        
+        // Show Buildings toggle
+        showBuildings.addEventListener('click', () => {
+            showBuildings.classList.toggle('active');
+            roomChoices.style.display = roomChoices.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>

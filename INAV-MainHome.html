@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INAV Main Home</title>
+    <link rel="stylesheet" href="INAV-MainHome.css">
+</head>
+<body>
+    <nav class="navigation">
+        <div class="aulogo">
+            <img src="new-au-logo.png" class="image-logo" alt="Arellano Logo">
+        </div>
+        <div class="campus">
+            <h5>Arellano University Elisa Esguerra Campus</h5>
+        </div>
+        <div class="logo">INAV</div>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <nav class="mobile-menu" id="mobile-menu">
+        <!-- Close Button -->
+        <button class="close-btn" id="close-btn">&times;</button> <!-- &times; is the X symbol -->
+        <ul>
+            <li><a href="About.html">About</a></li>
+            <li><a href="https://www.facebook.com/ElisaEsguerraCampus">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section class="Chiefs">
+        <div class="chiefs-content">
+            <img src="HOME OF THE CHIEFS.jfif" alt="Chiefs Image" class="chiefs-image">
+            <a href="INAV-CAMPUS.HTML" class="Get-Started" target="_self">Get Started</a>
+        </div>
+    </section>
+    
+    <!-- JavaScript para toggle ang menu -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-btn');
+        
+        // Open menu on hamburger click
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Close menu on close button click
+        closeBtn.addEventListener('click', () => {
+            hamburger.classList.remove('active'); // Reset hamburger animation
+            mobileMenu.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

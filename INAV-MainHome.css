@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav.navigation {
+    width: 100%;
+    height: 85px;
+    background-color: rgb(15, 15, 205);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.image-logo {
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
+}
+
+.campus h5 {
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: auto;
+    font-family: serif;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: flex; /* Show sa desktop and mobile */
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1000;
+    position: absolute; /* Position sa left side ng INAV */
+    right: 135px; /* Your adjustment: ilagay sa left ng INAV */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000000; /* Your adjustment: black lines */
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent overlay */
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 20px 0;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    transition: 0.3s;
+}
+
+.mobile-menu a:hover {
+    color: #99cbee; /* Match sa blue theme mo */
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001; /* Above the menu */
+}
+
+.close-btn:hover {
+    color: #99cbee; /* Match sa hover color */
+}
+
+/* Chiefs Section */
+.Chiefs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Palitan mula height: 100%; para siguraduhing full viewport */
+    padding-top: 120px; /* Bawasan mula 150px para mas balanced */
+    padding-bottom: 120px; /* Bawasan mula 180px para mas balanced */
+    text-align: center;
+    background: linear-gradient(to bottom right, #99cbee, #59b4ff);
+}
+
+.chiefs-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%; /* Ensure full width */
+}
+
+.chiefs-image {
+    max-width: 100%; /* Palitan mula 108vh para prevent overflow at responsive */
+    width: 100%;       
+    height: auto;
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-right: 0;
+    border-radius: 10px;
+    animation: fadeInUp 1.5s ease-out; /* Bawasan duration mula 2.6s para mas mabilis */
+}
+
+/* Button Design */
+.Get-Started {
+    display: inline-block; 
+    padding: 16px 24px;
+    font-size: 16px;
+    background-color: rgb(15, 15, 205);
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.7s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    animation: fadeInUp 2.5s ease-out;
+}
+
+.Get-Started:hover {
+    background-color: rgb(10, 10, 150);
+    transition: 0.8s;
+    cursor: pointer;
+    font-size: 20px;
+    transform: scale(1.05);
+}
+
+/* MOBILE RESPONSIVE FIX */
+/* ===================== */
+@media (max-width: 768px) {
+    /* Show hamburger sa mobile */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Animation para sa hamburger (optional: transform to X) */
+    .hamburger.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Navigation */
+    nav.navigation {
+        padding: 0 20px;
+        height: 70px;
+    }
+
+    .campus h5 {
+        font-size: 16px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .image-logo {
+        height: 50px;
+        width: 50px;
+    }
+
+    /* Chiefs section */
+    .Chiefs {
+        padding-top: 120px;
+        padding-bottom: 100px;
+    }
+    
+    /* Fix image overflow */
+    .chiefs-image {
+        max-width: 90%;
+        width: 90%;
+        margin-left: 0;            /* remove vh margin */
+        margin-bottom: 30px;
+    }
+
+    /* Button fix */
+    .Get-Started {
+        font-size: 18px;
+        padding: 14px 22px;
+    }
+
+    .Get-Started:hover {
+        font-size: 20px;           /* prevent jump */
+        transform: scale(1.05);
+    }
+}
+
+/* Animations in Chiefs*/
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

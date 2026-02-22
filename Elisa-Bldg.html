@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INAV CAMPUS</title>
+    <link rel="stylesheet" href="Elisa-Bldg.css">
+</head>
+<body> 
+
+    <!--Loading Screen-->
+    <div class="loading">
+        <div class="spinning"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navigation">
+        <div class="aulogo">
+            <img src="new-au-logo.png" class="image-logo" alt="Arellano Logo">
+        </div>
+        <div class="campus">
+            <h5>Arellano University Elisa Esguerra Campus</h5>
+        </div>
+        <a href="INAV-CAMPUS.HTML" class="logo-link">INAV</a>
+        <!-- Hamburger Menu Button -->
+        <button class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <nav class="mobile-menu" id="mobile-menu">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <ul>
+            <li><a href="About.html">About</a></li>
+            <li><a href="https://www.facebook.com/ElisaEsguerraCampus">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+
+        <!-- Show Buildings Toggle Button -->
+        <button class="show-buildings-btn" id="show-buildings">
+            <span class="arrow">&#9654;</span> Show Floors
+        </button>
+        
+        <!-- BUILDING BUTTONS (Hidden by default) -->
+        <div class="room-choices" id="room-choices">
+            
+            <!-- Floor 1 Left Entrance - Google Drive Link -->
+            <a href="https://drive.google.com/file/d/1fJ1RSOTj-F5tyZZMMJ_4C9KPaRLgK1Bi/preview" 
+               class="room-btn" 
+               target="_blank">
+               Elisa Esguerra Bldg,<br> First floor Left Entrance
+                <div class="floor-details">
+                    <h3><b>Floor 1, Rooms are consists of:</b></h3> <br> Room 101, Room 102, Teacher Faculty (Room 103),<br>
+                     Teacher Faculty (Room 104), Room 105, Room 106, Room 107, Room 108 <br> Room 109, Room 110, Room 111, Clinic
+                    and Canteen.
+                </div>
+            </a>
+            
+            <!-- Floor 1 Right Entrance - Google Drive Link -->
+            <a href="https://drive.google.com/file/d/1qFD0iZfC0loapigkaEhHKBOQhleg1Ezw/preview" 
+               class="room-btn" 
+               target="_blank">
+               Elisa Esguerra Bldg,<br>First floor Right Entrance
+                <div class="floor-details">
+                    <h3><b>Floor 1, Rooms are consists of:</b></h3> <br> Room 101, Room 102, Teacher Faculty Room (103),<br>
+                    Teacher Faculty (Room 104), Room 105, Room 106, Room 107, Room 108 <br> Room 109, Room 110, Room 111, Clinic
+                    and Canteen.
+                </div>
+            </a>
+            
+            <!-- Floor 2 - Google Drive Link -->
+            <a href="https://drive.google.com/file/d/1jR3B2kWclFXWdrfgmLprSC2XbzrOmfrd/preview" 
+               class="room-btn" 
+               target="_blank">
+               Elisa Esguerra Bldg,<br> Second Floor
+                <div class="floor-details">
+                    <h3><b>Floor 2, Rooms are consists of:</b></h3> <br> Room 201, Room 202, Room 203, Room 204,
+                    Room 205, Room 206, Room 207, Room 208 <br> Room 209, Room 210, Room 211, Room 212, Biology Lab,
+                    Chemistry Lab, Lab-Stock Room and Physics Lab.
+                </div>
+            </a>
+            
+            <!-- Floor 3 - Google Drive Link -->
+            <a href="https://drive.google.com/file/d/19ry6a2SyMQfqEcIoFz6P_bHjuAo301um/preview" 
+               class="room-btn" 
+               target="_blank">
+               Elisa Esguerra Bldg,<br> Third Floor
+                <div class="floor-details">
+                    <h3><b>Floor 3, Rooms are consists of:</b></h3> <br> Room 301, Room 302, Room 303, Room 304,
+                    Room 305, Room 306, Room 307, Room 308 <Br> Room 309, Room 310, Room 311, Room 312, Room 313, Room 314 and Room 315.
+                </div>
+            </a>
+            
+        </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-btn');
+        const showBuildings = document.getElementById('show-buildings');
+        const roomChoices = document.getElementById('room-choices');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mobileMenu.style.display = 'none';
+        });
+        
+        showBuildings.addEventListener('click', () => {
+            if (roomChoices.style.display === 'none' || roomChoices.style.display === '') {
+                roomChoices.style.display = 'flex';
+                showBuildings.innerHTML = '<span class="arrow">&#9660;</span> Hide Buildings';
+            } else {
+                roomChoices.style.display = 'none';
+                showBuildings.innerHTML = '<span class="arrow">&#9654;</span> Show Buildings';
+            }
+        });
+    </script>
+</body>
+</html>
